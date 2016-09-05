@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+root=$(realpath $(dirname $0))
+
+(
+  set -e
+
+  cd $root
+
+  if [[ -d src/main/proto ]]; then
+    # all patches must be unapplied
+    quilt pop -a
+  fi
+
+  mkdir -p src/main/proto
+  cp -rav ../google src/main/proto
+  quilt push -a
+  mvn compile
+)

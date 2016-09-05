@@ -1,0 +1,11 @@
+--- a/src/main/proto/google/api/servicemanagement/v1/resources.proto
++++ b/src/main/proto/google/api/servicemanagement/v1/resources.proto
+@@ -174,7 +174,7 @@
+   // of each change.
+   // A ConfigChange identifier is a dot separated path to the configuration.
+   // Example: visibility.rules[selector='LibraryService.CreateBook'].restriction
+-  repeated google.api.ConfigChange config_changes = 1;
++  // repeated google.api.ConfigChange config_changes = 1;
+ }
+ 
+ // A rollout resource that defines how service configuration versions are pushed
